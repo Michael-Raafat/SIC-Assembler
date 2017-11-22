@@ -1,0 +1,45 @@
+1     COPY     START   1                        
+1     FIRST    STL     RETADR             140034
+4     CLOOP    JSUB    RDREC              48303a
+7              LDA     LENGTH             000037
+a              COMP    ZERO               280031
+d              JEQ     ENDFIL             300016
+10             JSUB    WRREC              483062
+13             J       CLOOP              3c0004
+16    ENDFIL   LDA     EOF                00002b
+19             STA     BUFFER             0c003a
+1c             LDA     THREE              00002e
+1f             STA     LENGTH             0c0037
+22             JSUB    WRREC              483062
+25             LDL     RETADR             080034
+28             RSUB                       4c0000
+2b    EOF      BYTE    C'EOF'             454f46
+2e    THREE    WORD    3                  000003
+31    ZERO     WORD    0                  000000
+34    RETADR   RESW    1                        
+37    LENGTH   RESW    1                        
+3a    BUFFER   RESW    4096                     
+303a  RDREC    LDX     ZERO               040031
+303d           LDA     ZERO               000031
+3040  RLOOP    TD      INPUT              e0305e
+3043           JEQ     RLOOP              303040
+3046           RD      INPUT              d8305e
+3049           COMP    ZERO               280031
+304c           JEQ     EXIT               303058
+304f           STCH    BUFFER,X           54803a
+3052           TIX     MAXLEN             2c305f
+3055           JLT     RLOOP              383040
+3058  EXIT     STX     LENGTH             100037
+305b           RSUB                       4c0000
+305e  INPUT    BYTE    X'F1'              F1    
+305f  MAXLEN   WORD    4096               001000
+3062  WRREC    LDX     ZERO               040031
+3065  WLOOP    TD      OUTPUT             e0307a
+3068           JEQ     WLOOP              303065
+306b           LDCH    BUFFER,X           50803a
+306e           WD      OUTPUT             dc307a
+3071           TIX     LENGTH             2c0037
+3074           JLT     WLOOP              383065
+3077           RSUB                       4c0000
+307a  OUTPUT   BYTE    X'05'              05    
+307b           END     FIRST                    

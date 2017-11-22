@@ -1,0 +1,22 @@
+Symbol         address
+ZERO           49
+INPUT          12382
+WRREC          12386
+OUTPUT         12410
+ENDFIL         22
+LENGTH         55
+COPY           1
+FIRST          1
+RETADR         52
+BUFFER         58
+RLOOP          12352
+MAXLEN         12383
+CLOOP          4
+WLOOP          12389
+EOF            43
+RDREC          12346
+EXIT           12376
+THREE          46
+
+
+Literal        address

@@ -1,0 +1,9 @@
+Symbol         address
+GAMMA          4105
+STAB           4096
+Prbn01         4096
+ALPHA          4096
+BETA           4102
+
+
+Literal        address

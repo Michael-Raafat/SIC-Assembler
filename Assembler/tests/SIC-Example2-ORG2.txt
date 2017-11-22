@@ -1,0 +1,43 @@
+COPY     START   1000               
+FIRST    STL     RETADR
+CLOOP    JSUB    RDREC
+         LDA     LENGTH
+         COMP    =W'0'
+         JEQ	 ENDFIL
+    	 JSUB    WRREC
+    	 J       CLOOP
+ENDFIL   LDA     =C'EOF'
+    	 STA     BUFFER
+    	 LDA     THREE
+    	 STA     LENGTH
+    	 JSUB    WRREC
+    	 LDL     RETADR
+    	 RSUB
+THREE    WORD    3
+RETADR   RESW    1
+LENGTH   RESW    1
+BUFFER   RESW    4096
+RDREC    LDX     =W'0'
+         LDA     =W'0'
+RLOOP	 TD      INPUT
+         JEQ     RLOOP
+    	 RD      INPUT
+    	 COMP    =W'0'
+    	 JEQ     EXIT
+    	 STCH    BUFFER,X
+    	 TIX     MAXLEN
+    	 JLT     RLOOP
+EXIT     STX     LENGTH
+         RSUB
+         ORG     WLOOP
+INPUT    BYTE    X'F1'
+MAXLEN   WORD    4096
+WRREC    LDX     =W'0'
+WLOOP    TD      =X'05'
+    	 JEQ     WLOOP
+    	 LDCH    BUFFER,X
+    	 WD      =X'05'
+    	 TIX     LENGTH
+    	 JLT     WLOOP
+    	 RSUB		 
+         END     FIRST

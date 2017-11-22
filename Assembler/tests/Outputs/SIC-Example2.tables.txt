@@ -1,0 +1,22 @@
+Symbol         address
+ZERO           4144
+INPUT          8285
+WRREC          8289
+OUTPUT         8313
+ENDFIL         4117
+LENGTH         4150
+COPY           4096
+FIRST          4096
+RETADR         4147
+BUFFER         4153
+RLOOP          8255
+MAXLEN         8286
+CLOOP          4099
+WLOOP          8292
+EOF            4138
+RDREC          8249
+EXIT           8279
+THREE          4141
+
+
+Literal        address

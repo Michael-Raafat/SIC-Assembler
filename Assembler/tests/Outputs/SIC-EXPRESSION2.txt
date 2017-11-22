@@ -1,0 +1,48 @@
+1000  COPY     START   1000                     
+1000  FIRST    STL     RETADR             14102d
+1003  CLOOP    JSUB    RDREC              484030
+1006           LDA     LENGTH             00102d
+1009           COMP    =X'00'             280022
+100c           JEQ     ENDFIL             301015
+100f           JSUB    WRREC              48000a
+1012           J       CLOOP              3c1003
+1015  ENDFIL   LDA     =C'EOF'            000024
+1018           STA     BUFFER             0c1030
+101b           LDA     THREE              00102a
+101e           STA     LENGTH             0c102d
+1021           JSUB    WRREC              48000a
+1024           LDL     RETADR             08102d
+1027           RSUB                       4c0000
+102a  THREE    WORD    3                  000003
+102d  RETADR   EQU     *                        
+102d  LENGTH   RESW    1                        
+1030  BUFFER   RESW    4096                     
+4030  RDREC    LDX     =X'00'             040022
+4033           LDA     =X'00'             000022
+4036  RLOOP    TD      INPUT              e00006
+4039           JEQ     RLOOP              304036
+403c           RD      INPUT              d80006
+403f           COMP    =X'00'             280022
+4042           JEQ     EXIT               30404e
+4045           STCH    BUFFER,X           549030
+4048           TIX     MAXLEN             2c0007
+404b           JLT     RLOOP              384036
+404e  EXIT     STX     LENGTH             10102d
+4051           RSUB                       4c0000
+6              ORG     RLOOP-RDREC              
+6     INPUT    BYTE    X'F1'              F1    
+7     MAXLEN   WORD    4096               001000
+a     WRREC    LDX     =X'00'             040022
+d     WLOOP    TD      =X'05'             e00027
+10             JEQ     WLOOP              30000d
+13             LDCH    BUFFER,X           509030
+16             WD      =X'05'             dc0027
+19             TIX     LENGTH             2c102d
+1c             JLT     WLOOP              38000d
+1f             RSUB                       4c0000
+22             ORG     WLOOP+WRREC               Invalid Expression
+102d  TEXT     EQU     RETADR                   
+22             END     FIRST                    
+22             BYTE    X'00'              00    
+24             BYTE    C'EOF'             454f46
+27             BYTE    X'05'              05    

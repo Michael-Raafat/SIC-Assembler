@@ -1,0 +1,1060 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_74" class="java.beans.XMLDecoder">
+ <object class="java.util.ArrayList">
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>ADD</string>
+    </void>
+    <void property="opCode">
+     <int>24</int>
+    </void>
+    <void property="opLength">
+     <object class="java.lang.Enum" id="OperationLength0" method="valueOf">
+      <class>assembler.operation.OperationLength</class>
+      <string>THREE_OR_FOUR_BYTE</string>
+     </object>
+    </void>
+    <void property="operandType">
+     <object class="java.lang.Enum" id="OperationOperandType0" method="valueOf">
+      <class>assembler.operation.OperationOperandType</class>
+      <string>MEMORY</string>
+     </object>
+    </void>
+    <void property="sic">
+     <boolean>true</boolean>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>ADDF</string>
+    </void>
+    <void property="opCode">
+     <int>88</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength0"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType0"/>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>ADDR</string>
+    </void>
+    <void property="opCode">
+     <int>144</int>
+    </void>
+    <void property="opLength">
+     <object class="java.lang.Enum" id="OperationLength1" method="valueOf">
+      <class>assembler.operation.OperationLength</class>
+      <string>TWO_BYTE</string>
+     </object>
+    </void>
+    <void property="operandType">
+     <object class="java.lang.Enum" id="OperationOperandType1" method="valueOf">
+      <class>assembler.operation.OperationOperandType</class>
+      <string>REG_TO_REG</string>
+     </object>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>AND</string>
+    </void>
+    <void property="opCode">
+     <int>64</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength0"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType0"/>
+    </void>
+    <void property="sic">
+     <boolean>true</boolean>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>CLEAR</string>
+    </void>
+    <void property="opCode">
+     <int>180</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength1"/>
+    </void>
+    <void property="operandType">
+     <object class="java.lang.Enum" id="OperationOperandType2" method="valueOf">
+      <class>assembler.operation.OperationOperandType</class>
+      <string>REG</string>
+     </object>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>COMP</string>
+    </void>
+    <void property="opCode">
+     <int>40</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength0"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType0"/>
+    </void>
+    <void property="sic">
+     <boolean>true</boolean>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>COMPF</string>
+    </void>
+    <void property="opCode">
+     <int>136</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength0"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType0"/>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>COMPR</string>
+    </void>
+    <void property="opCode">
+     <int>160</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength1"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType1"/>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>DIV</string>
+    </void>
+    <void property="opCode">
+     <int>36</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength0"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType0"/>
+    </void>
+    <void property="sic">
+     <boolean>true</boolean>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>DIVF</string>
+    </void>
+    <void property="opCode">
+     <int>100</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength0"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType0"/>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>DIVR</string>
+    </void>
+    <void property="opCode">
+     <int>156</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength1"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType1"/>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>FIX</string>
+    </void>
+    <void property="opCode">
+     <int>196</int>
+    </void>
+    <void property="opLength">
+     <object class="java.lang.Enum" id="OperationLength2" method="valueOf">
+      <class>assembler.operation.OperationLength</class>
+      <string>ONE_BYTE</string>
+     </object>
+    </void>
+    <void property="operandType">
+     <object class="java.lang.Enum" id="OperationOperandType3" method="valueOf">
+      <class>assembler.operation.OperationOperandType</class>
+      <string>NONE</string>
+     </object>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>FLOAT</string>
+    </void>
+    <void property="opCode">
+     <int>192</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength2"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType3"/>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>HIO</string>
+    </void>
+    <void property="opCode">
+     <int>244</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength2"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType3"/>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>J</string>
+    </void>
+    <void property="opCode">
+     <int>60</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength0"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType0"/>
+    </void>
+    <void property="sic">
+     <boolean>true</boolean>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>JEQ</string>
+    </void>
+    <void property="opCode">
+     <int>48</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength0"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType0"/>
+    </void>
+    <void property="sic">
+     <boolean>true</boolean>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>JGT</string>
+    </void>
+    <void property="opCode">
+     <int>52</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength0"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType0"/>
+    </void>
+    <void property="sic">
+     <boolean>true</boolean>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>JLT</string>
+    </void>
+    <void property="opCode">
+     <int>56</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength0"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType0"/>
+    </void>
+    <void property="sic">
+     <boolean>true</boolean>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>JSUB</string>
+    </void>
+    <void property="opCode">
+     <int>72</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength0"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType0"/>
+    </void>
+    <void property="sic">
+     <boolean>true</boolean>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>LDA</string>
+    </void>
+    <void property="opCode">
+     <int>0</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength0"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType0"/>
+    </void>
+    <void property="sic">
+     <boolean>true</boolean>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>LDB</string>
+    </void>
+    <void property="opCode">
+     <int>104</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength0"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType0"/>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>LDCH</string>
+    </void>
+    <void property="opCode">
+     <int>80</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength0"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType0"/>
+    </void>
+    <void property="sic">
+     <boolean>true</boolean>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>LDF</string>
+    </void>
+    <void property="opCode">
+     <int>112</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength0"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType0"/>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>LDL</string>
+    </void>
+    <void property="opCode">
+     <int>8</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength0"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType0"/>
+    </void>
+    <void property="sic">
+     <boolean>true</boolean>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>LDS</string>
+    </void>
+    <void property="opCode">
+     <int>108</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength0"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType0"/>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>LDT</string>
+    </void>
+    <void property="opCode">
+     <int>116</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength0"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType0"/>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>LDX</string>
+    </void>
+    <void property="opCode">
+     <int>4</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength0"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType0"/>
+    </void>
+    <void property="sic">
+     <boolean>true</boolean>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>LPS</string>
+    </void>
+    <void property="opCode">
+     <int>208</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength0"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType0"/>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>MUL</string>
+    </void>
+    <void property="opCode">
+     <int>32</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength0"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType0"/>
+    </void>
+    <void property="sic">
+     <boolean>true</boolean>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>MULF</string>
+    </void>
+    <void property="opCode">
+     <int>96</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength0"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType0"/>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>MULR</string>
+    </void>
+    <void property="opCode">
+     <int>152</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength1"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType1"/>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>NORM</string>
+    </void>
+    <void property="opCode">
+     <int>200</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength2"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType3"/>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>OR</string>
+    </void>
+    <void property="opCode">
+     <int>68</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength0"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType0"/>
+    </void>
+    <void property="sic">
+     <boolean>true</boolean>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>RD</string>
+    </void>
+    <void property="opCode">
+     <int>216</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength0"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType0"/>
+    </void>
+    <void property="sic">
+     <boolean>true</boolean>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>RMO</string>
+    </void>
+    <void property="opCode">
+     <int>172</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength1"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType1"/>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>RSUB</string>
+    </void>
+    <void property="opCode">
+     <int>76</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength0"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType3"/>
+    </void>
+    <void property="sic">
+     <boolean>true</boolean>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>SHIFTL</string>
+    </void>
+    <void property="opCode">
+     <int>164</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength1"/>
+    </void>
+    <void property="operandType">
+     <object class="java.lang.Enum" id="OperationOperandType4" method="valueOf">
+      <class>assembler.operation.OperationOperandType</class>
+      <string>REG_NBITS</string>
+     </object>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>SHIFTR</string>
+    </void>
+    <void property="opCode">
+     <int>168</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength1"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType4"/>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>SIO</string>
+    </void>
+    <void property="opCode">
+     <int>240</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength2"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType3"/>
+    </void>
+    <void property="sic">
+     <boolean>true</boolean>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>SSK</string>
+    </void>
+    <void property="opCode">
+     <int>236</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength0"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType0"/>
+    </void>
+    <void property="sic">
+     <boolean>true</boolean>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>STA</string>
+    </void>
+    <void property="opCode">
+     <int>12</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength0"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType0"/>
+    </void>
+    <void property="sic">
+     <boolean>true</boolean>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>STB</string>
+    </void>
+    <void property="opCode">
+     <int>120</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength0"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType0"/>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>STCH</string>
+    </void>
+    <void property="opCode">
+     <int>84</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength0"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType0"/>
+    </void>
+    <void property="sic">
+     <boolean>true</boolean>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>STF</string>
+    </void>
+    <void property="opCode">
+     <int>128</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength0"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType0"/>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>STI</string>
+    </void>
+    <void property="opCode">
+     <int>212</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength0"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType0"/>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>STL</string>
+    </void>
+    <void property="opCode">
+     <int>20</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength0"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType0"/>
+    </void>
+    <void property="sic">
+     <boolean>true</boolean>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>STS</string>
+    </void>
+    <void property="opCode">
+     <int>124</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength0"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType0"/>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>STSW</string>
+    </void>
+    <void property="opCode">
+     <int>232</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength0"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType0"/>
+    </void>
+    <void property="sic">
+     <boolean>true</boolean>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>STT</string>
+    </void>
+    <void property="opCode">
+     <int>132</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength0"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType0"/>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>STX</string>
+    </void>
+    <void property="opCode">
+     <int>16</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength0"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType0"/>
+    </void>
+    <void property="sic">
+     <boolean>true</boolean>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>SUB</string>
+    </void>
+    <void property="opCode">
+     <int>28</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength0"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType0"/>
+    </void>
+    <void property="sic">
+     <boolean>true</boolean>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>SUBF</string>
+    </void>
+    <void property="opCode">
+     <int>92</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength0"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType0"/>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>SUBR</string>
+    </void>
+    <void property="opCode">
+     <int>148</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength1"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType1"/>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>SVC</string>
+    </void>
+    <void property="opCode">
+     <int>176</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength1"/>
+    </void>
+    <void property="operandType">
+     <object class="java.lang.Enum" method="valueOf">
+      <class>assembler.operation.OperationOperandType</class>
+      <string>N</string>
+     </object>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>TD</string>
+    </void>
+    <void property="opCode">
+     <int>224</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength0"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType0"/>
+    </void>
+    <void property="sic">
+     <boolean>true</boolean>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>TIO</string>
+    </void>
+    <void property="opCode">
+     <int>248</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength2"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType3"/>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>TIX</string>
+    </void>
+    <void property="opCode">
+     <int>44</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength0"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType0"/>
+    </void>
+    <void property="sic">
+     <boolean>true</boolean>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>TIXR</string>
+    </void>
+    <void property="opCode">
+     <int>184</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength1"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType2"/>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.operation.Operation">
+    <void property="name">
+     <string>WD</string>
+    </void>
+    <void property="opCode">
+     <int>220</int>
+    </void>
+    <void property="opLength">
+     <object idref="OperationLength0"/>
+    </void>
+    <void property="operandType">
+     <object idref="OperationOperandType0"/>
+    </void>
+    <void property="sic">
+     <boolean>true</boolean>
+    </void>
+   </object>
+  </void>
+ </object>
+</java>

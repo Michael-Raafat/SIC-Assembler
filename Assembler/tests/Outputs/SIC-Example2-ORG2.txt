@@ -1,0 +1,46 @@
+1000  COPY     START   1000                     
+1000  FIRST    STL     RETADR             14102d
+1003  CLOOP    JSUB    RDREC              484033
+1006           LDA     LENGTH             001030
+1009           COMP    =W'0'              284073
+100c           JEQ     ENDFIL             301015
+100f           JSUB    WRREC              48405b
+1012           J       CLOOP              3c1003
+1015  ENDFIL   LDA     =C'EOF'            004076
+1018           STA     BUFFER             0c1033
+101b           LDA     THREE              00102a
+101e           STA     LENGTH             0c1030
+1021           JSUB    WRREC              48405b
+1024           LDL     RETADR             08102d
+1027           RSUB                       4c0000
+102a  THREE    WORD    3                  000003
+102d  RETADR   RESW    1                        
+1030  LENGTH   RESW    1                        
+1033  BUFFER   RESW    4096                     
+4033  RDREC    LDX     =W'0'              044073
+4036           LDA     =W'0'              004073
+4039  RLOOP    TD      INPUT              e04057
+403c           JEQ     RLOOP              304039
+403f           RD      INPUT              d84057
+4042           COMP    =W'0'              284073
+4045           JEQ     EXIT               304051
+4048           STCH    BUFFER,X           549033
+404b           TIX     MAXLEN             2c4058
+404e           JLT     RLOOP              384039
+4051  EXIT     STX     LENGTH             101030
+4054           RSUB                       4c0000
+4057           ORG     WLOOP                     Invalid Expression
+4057  INPUT    BYTE    X'F1'              F1    
+4058  MAXLEN   WORD    4096               001000
+405b  WRREC    LDX     =W'0'              044073
+405e  WLOOP    TD      =X'05'             e04079
+4061           JEQ     WLOOP              30405e
+4064           LDCH    BUFFER,X           509033
+4067           WD      =X'05'             dc4079
+406a           TIX     LENGTH             2c1030
+406d           JLT     WLOOP              38405e
+4070           RSUB                       4c0000
+4073           END     FIRST                    
+4073           WORD    0                  000000
+4076           BYTE    C'EOF'             454f46
+4079           BYTE    X'05'              05    

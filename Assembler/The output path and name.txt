@@ -1,0 +1,25 @@
+1000  RDNUM    START   0x1000                   
+1000           LDA     BETA               00102a
+1003           LDS     GAMMA                     Not a SIC machine instruction
+1003           DIVR    S,A                       Not a SIC machine instruction
+1003           STA     INTDIV             0c1027
+1006           MUL     GAMMA              20102d
+1009           STA     TEMP               0c1024
+100c           LDA     BETA               00102a
+100f           SUB     TEMP               1c1024
+1012           LDT     #2                        Not a SIC machine instruction
+1012           LDB     #1                        Not a SIC machine instruction
+1012           ADDR    B,S                       Not a SIC machine instruction
+1012           DIVR    T,S                       Not a SIC machine instruction
+1012           COMPR   A,S                       Not a SIC machine instruction
+1012           LDA     INTDIV             001027
+1015           JLT     LAST               38101b
+1018           ADD     #1                        Not a valid operand.
+101b  LAST     STA     ALPHA              0c1021
+101e  FIN      J       FIN                3c101e
+1021  ALPHA    RESW    1                        
+1024  TEMP     RESW    1                        
+1027  INTDIV   RESW    1                        
+102a  BETA     WORD    18                 000012
+102d  GAMMA    WORD    5                  000005
+1030           END     RDNUM                    

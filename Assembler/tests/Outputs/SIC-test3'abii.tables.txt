@@ -1,0 +1,22 @@
+Symbol         address
+ZERO           1048624
+INPUT          1060957
+WRREC          1060961
+OUTPUT         1060985
+ENDFIL         1048597
+LENGTH         1048630
+COPY           1048576
+FIRST          1048576
+RETADR         1048627
+BUFFER         1048633
+RLOOP          1060927
+MAXLEN         1060958
+CLOOP          1048579
+WLOOP          1060964
+EOF            1048618
+RDREC          1060921
+EXIT           1060951
+THREE          1048621
+
+
+Literal        address

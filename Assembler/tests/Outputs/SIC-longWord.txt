@@ -1,0 +1,46 @@
+1000  COPY     START   1000                     
+1000  FIRST    STL     RETADR             14102a
+1003  CLOOP    JSUB    RDREC              48402d
+1006           LDA     LENGTH             00102a
+1009           COMP    =X'00'             28406d
+100c           JEQ     ENDFIL             301015
+100f           JSUB    WRREC              484055
+1012           J       CLOOP              3c1003
+1015  ENDFIL   LDA     =C'EOF'            00406f
+1018           STA     BUFFER             0c102d
+101b           LDA     THREE              00102a
+101e           STA     LENGTH             0c102a
+1021           JSUB    WRREC              484055
+1024           LDL     RETADR             08102a
+1027           RSUB                       4c0000
+102a  THREE    WORD    3233456789123456          Invalid operands for the word directive.
+102a  RETADR   EQU     *                        
+102a  LENGTH   RESW    1                        
+102d  BUFFER   RESW    4096                     
+402d  RDREC    LDX     =X'00'             04406d
+4030           LDA     =X'00'             00406d
+4033  RLOOP    TD      INPUT              e04051
+4036           JEQ     RLOOP              304033
+4039           RD      INPUT              d84051
+403c           COMP    =X'00'             28406d
+403f           JEQ     EXIT               30404b
+4042           STCH    BUFFER,X           54902d
+4045           TIX     MAXLEN             2c4052
+4048           JLT     RLOOP              384033
+404b  EXIT     STX     LENGTH             10102a
+404e           RSUB                       4c0000
+4051  INPUT    BYTE    X'F1'              F1    
+4052  MAXLEN   WORD    4096               001000
+4055  WRREC    LDX     =X'00'             04406d
+4058  WLOOP    TD      =X'05'             e04072
+405b           JEQ     WLOOP              304058
+405e           LDCH    BUFFER,X           50902d
+4061           WD      =X'05'             dc4072
+4064           TIX     LENGTH             2c102a
+4067           JLT     WLOOP              384058
+406a           RSUB                       4c0000
+102a  TEXT     EQU     RETADR                   
+406d           END     FIRST                    
+406d           BYTE    X'00'              00    
+406f           BYTE    C'EOF'             454f46
+4072           BYTE    X'05'              05    

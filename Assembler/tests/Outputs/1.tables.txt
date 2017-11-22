@@ -1,0 +1,12 @@
+Symbol         address
+GAMMA          4112
+DATA           4115
+DELTA          0
+Prbn01         4096
+ALPHA          1
+BETA           1
+
+
+Literal        address
+=C'TEST'       4108
+=X'45'         4118

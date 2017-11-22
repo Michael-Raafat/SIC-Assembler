@@ -1,0 +1,44 @@
+0     COPY     START   0                 
+0     FIRST    STL     RETADR            
+3     CLOOP    JSUB    RDREC             
+6              LDA     LENGTH            
+9              COMP    ZERO              
+c              JEQ     ENDFIL            
+f              JSUB    WRREC             
+12             J       CLOOP             
+15    ENDFIL   LDA     EOF               
+18             STA     BUFFER            
+1b             LDA     THREE             
+1e             STA     LENGTH            
+21             JSUB    WRREC             
+24             LDL     RETADR            
+27             RSUB                      
+2a    EOF      BYTE    C'EOF'            
+2d    THREE    WORD    3                 
+30    ZERO     WORD    0                 
+33    RETADR   RESW    1                 
+36    LENGTH   RESW    1                 
+39    BUFFER   RESW    4096              
+3039  RDREC    LDX     ZERO              
+303c           LDA     ZERO              
+303f  RLOOP    TD      INPUT             
+3042           JEQ     RLOOP             
+3045           RD      INPUT             
+3048           COMP    ZERO              
+304b           JEQ     EXIT              
+304e           STCH    BUFFER,X          
+3051           TIX     MAXLEN            
+3054           JLT     RLOOP             
+3057  EXIT     STX     LENGTH            
+305a           RSUB                      
+305d  INPUT    BYTE    X'F1'             
+305e  MAXLEN   WORD    4096              
+3061  WRREC    LDX     ZERO              
+3064  WLOOP    TD      OUTPUT            
+3067           JEQ     WLOOP             
+306a           LDCH    BUFFER,X          
+306d           WD      OUTPUT            
+3070           TIX     LENGTH            
+3073           JLT     WLOOP             
+3076           RSUB                      
+3079  OUTPUT   BYTE    X'05'             

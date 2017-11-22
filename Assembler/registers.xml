@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_74" class="java.beans.XMLDecoder">
+ <object class="java.util.ArrayList">
+  <void method="add">
+   <object class="assembler.register.Register">
+    <void property="address">
+     <int>0</int>
+    </void>
+    <void property="name">
+     <string>A</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.register.Register">
+    <void property="address">
+     <int>1</int>
+    </void>
+    <void property="name">
+     <string>X</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.register.Register">
+    <void property="address">
+     <int>2</int>
+    </void>
+    <void property="name">
+     <string>L</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.register.Register">
+    <void property="address">
+     <int>3</int>
+    </void>
+    <void property="name">
+     <string>B</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.register.Register">
+    <void property="address">
+     <int>4</int>
+    </void>
+    <void property="name">
+     <string>S</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.register.Register">
+    <void property="address">
+     <int>5</int>
+    </void>
+    <void property="name">
+     <string>T</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.register.Register">
+    <void property="address">
+     <int>6</int>
+    </void>
+    <void property="name">
+     <string>F</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.register.Register">
+    <void property="address">
+     <int>8</int>
+    </void>
+    <void property="name">
+     <string>PC</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="assembler.register.Register">
+    <void property="address">
+     <int>9</int>
+    </void>
+    <void property="name">
+     <string>SW</string>
+    </void>
+   </object>
+  </void>
+ </object>
+</java>

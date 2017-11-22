@@ -1,0 +1,51 @@
+1000  COPY     START   1000              
+1000  FIRST    STL     RETADR            
+1003  CLOOP    JSUB    RDREC             
+1006           LDA     LENGTH            
+1009           COMP    =X'00'            
+100c           JEQ     ENDFIL            
+100f           JSUB    WRREC             
+1012           J       CLOOP             
+1015  ENDFIL   LDA     =C'EOF'           
+1018           STA     BUFFER            
+101b           LDA     THREE             
+101e           STA     LENGTH            
+1021           JSUB    WRREC             
+1024           LDL     RETADR            
+1027           RSUB                      
+102a  THREE    WORD    3                 
+102d  RETADR   EQU     *                 
+102d  LENGTH   RESW    1                 
+1030  BUFFER   RESW    4096              
+1030  STAB     EQU     BUFFER            
+1030  VALUE    EQU     STAB              
+1039  FLAG     EQU     STAB + 9          
+1027  FLAGS    EQU     STAB - 9          
+4030  RDREC    LDX     =X'00'            
+4033           LDA     =X'00'            
+4036  RLOOP    TD      INPUT             
+4039           JEQ     RLOOP             
+403c           RD      INPUT             
+403f           COMP    =X'00'            
+4042           JEQ     EXIT              
+4045           STCH    BUFFER,X          
+4048           TIX     MAXLEN            
+404b           JLT     RLOOP             
+404e  EXIT     STX     LENGTH            
+4051           RSUB                      
+6              ORG     RLOOP-RDREC       
+6     INPUT    BYTE    X'F1'             
+7     MAXLEN   WORD    4096              
+a     WRREC    LDX     =X'00'            
+d     WLOOP    TD      =X'05'            
+10             JEQ     WLOOP             
+13             LDCH    BUFFER,X          
+16             WD      =X'05'            
+19             TIX     LENGTH            
+1c             JLT     WLOOP             
+1f             RSUB                      
+102d  TEXT     EQU     RETADR            
+22             BYTE    X'00'             
+24             BYTE    C'EOF'            
+27             BYTE    X'05'             
+22             END     FIRST             

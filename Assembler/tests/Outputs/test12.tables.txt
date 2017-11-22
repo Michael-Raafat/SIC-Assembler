@@ -1,0 +1,16 @@
+Symbol         address
+ZERO           39
+HUND           45
+INPUT          48
+COMPUTE        6
+FIN2           3
+LOOP           9
+FOUR           42
+LENGTH         149
+FIN            33
+BUFFER         49
+P              0
+PROG12         0
+
+
+Literal        address

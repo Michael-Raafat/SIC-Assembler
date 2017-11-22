@@ -1,0 +1,46 @@
+1000  COPY     START   1000              
+1000  FIRST    STL     RETADR            
+1003  CLOOP    JSUB    RDREC             
+1006           LDA     LENGTH            
+1009           COMP    =X'00'            
+100c           JEQ     ENDFIL            
+100f           JSUB    WRREC             
+1012           J       CLOOP             
+1015  ENDFIL   LDA     =C'EOF'           
+1018           STA     BUFFER            
+101b           LDA     THREE             
+101e           STA     LENGTH            
+1021           JSUB    WRREC             
+1024           LDL     RETADR            
+1027           RSUB                      
+102a  THREE    WORD    3233456789123456   Invalid operands for the word directive.
+102a  RETADR   EQU     *                 
+102a  LENGTH   RESW    1                 
+102d  BUFFER   RESW    4096              
+402d  RDREC    LDX     =X'00'            
+4030           LDA     =X'00'            
+4033  RLOOP    TD      INPUT             
+4036           JEQ     RLOOP             
+4039           RD      INPUT             
+403c           COMP    =X'00'            
+403f           JEQ     EXIT              
+4042           STCH    BUFFER,X          
+4045           TIX     MAXLEN            
+4048           JLT     RLOOP             
+404b  EXIT     STX     LENGTH            
+404e           RSUB                      
+4051  INPUT    BYTE    X'F1'             
+4052  MAXLEN   WORD    4096              
+4055  WRREC    LDX     =X'00'            
+4058  WLOOP    TD      =X'05'            
+405b           JEQ     WLOOP             
+405e           LDCH    BUFFER,X          
+4061           WD      =X'05'            
+4064           TIX     LENGTH            
+4067           JLT     WLOOP             
+406a           RSUB                      
+102a  TEXT     EQU     RETADR            
+406d           BYTE    X'00'             
+406f           BYTE    C'EOF'            
+4072           BYTE    X'05'             
+406d           END     FIRST             

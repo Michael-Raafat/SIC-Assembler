@@ -1,0 +1,45 @@
+100000 COPY    START   100000                    Out of sic machine memory !
+100000 FIRST   STL     RETADR                    Out of memory range of SIC machine.
+100003 CLOOP   JSUB    RDREC                     Out of memory range of SIC machine.
+100006         LDA     LENGTH                    Out of memory range of SIC machine.
+100009         COMP    ZERO                      Out of memory range of SIC machine.
+10000c         JEQ     ENDFIL                    Out of memory range of SIC machine.
+10000f         JSUB    WRREC                     Out of memory range of SIC machine.
+100012         J       CLOOP                     Out of memory range of SIC machine.
+100015 ENDFIL  LDA     EOF                       Out of memory range of SIC machine.
+100018         STA     BUFFER                    Out of memory range of SIC machine.
+10001b         LDA     THREE                     Out of memory range of SIC machine.
+10001e         STA     LENGTH                    Out of memory range of SIC machine.
+100021         JSUB    WRREC                     Out of memory range of SIC machine.
+100024         LDL     RETADR                    Out of memory range of SIC machine.
+100027         RSUB                       4c0000 Out of sic machine memory !
+10002a EOF     BYTE    C'EOF'             454f46 Out of sic machine memory !
+10002d THREE   WORD    3                  000003 Out of sic machine memory !
+100030 ZERO    WORD    0                  000000 Out of sic machine memory !
+100033 RETADR  RESW    1                         Out of sic machine memory !
+100036 LENGTH  RESW    1                         Out of sic machine memory !
+100039 BUFFER  RESW    4096                      Out of sic machine memory !
+103039 RDREC   LDX     ZERO                      Out of memory range of SIC machine.
+10303c         LDA     ZERO                      Out of memory range of SIC machine.
+10303f RLOOP   TD      INPUT                     Out of memory range of SIC machine.
+103042         JEQ     RLOOP                     Out of memory range of SIC machine.
+103045         RD      INPUT                     Out of memory range of SIC machine.
+103048         COMP    ZERO                      Out of memory range of SIC machine.
+10304b         JEQ     EXIT                      Out of memory range of SIC machine.
+10304e         STCH    BUFFER,X                  Out of memory range of SIC machine.
+103051         TIX     MAXLEN                    Out of memory range of SIC machine.
+103054         JLT     RLOOP                     Out of memory range of SIC machine.
+103057 EXIT    STX     LENGTH                    Out of memory range of SIC machine.
+10305a         RSUB                       4c0000 Out of sic machine memory !
+10305d INPUT   BYTE    X'F1'              F1     Out of sic machine memory !
+10305e MAXLEN  WORD    4096               001000 Out of sic machine memory !
+103061 WRREC   LDX     ZERO                      Out of memory range of SIC machine.
+103064 WLOOP   TD      OUTPUT                    Out of memory range of SIC machine.
+103067         JEQ     WLOOP                     Out of memory range of SIC machine.
+10306a         LDCH    BUFFER,X                  Out of memory range of SIC machine.
+10306d         WD      OUTPUT                    Out of memory range of SIC machine.
+103070         TIX     LENGTH                    Out of memory range of SIC machine.
+103073         JLT     WLOOP                     Out of memory range of SIC machine.
+103076         RSUB                       4c0000 Out of sic machine memory !
+103079 OUTPUT  BYTE    X'05'              05     Out of sic machine memory !
+10307a         END     FIRST                     Out of sic machine memory !

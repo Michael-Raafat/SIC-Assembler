@@ -1,0 +1,45 @@
+0     COPY     START   0                 
+0     FIRST    STL     RETADR            
+3     CLOOP    JSUB    RDREC             
+6              LDA     LENGTH            
+9              COMP    ZERO              
+c              JEQ     ENDFIL            
+f              JSUB    WRREC             
+12             J       CLOOP             
+15    ENDFIL   LDA     EOF               
+18             STA     BUFFER            
+1b             LDA     THREE             
+1e             STA     LENGTH            
+21             JSUB    WRREC             
+24             LDL     RETADR            
+27             RSUB                      
+2a    EOF      BYTE    C'EOF'            
+2d    THREE    WORD    3                 
+30    ZERO     WORD    0                 
+33    RETADR   RESW    1                 
+36    LENGTH   RESW    1                 
+39    BUFFER   RESB    -4096              Invalid operand for RESW
+39    RDREC    LDX     ZERO              
+3c             LDA     ZERO              
+3f    RLOOP    TD      INPUT             
+42             JEQ     RLOOP             
+45             RD      INPUT             
+48             COMP    ZERO              
+4b             JEQ     EXIT              
+4e             STCH    BUFFER,X          
+51             TIX     MAXLEN            
+54             JLT     RLOOP             
+57    EXIT     STX     LENGTH            
+5a             RSUB                      
+5d    INPUT    BYTE    X'F1'             
+5e    MAXLEN   WORD    4096              
+61    WRREC    LDX     ZERO              
+64    WLOOP    TD      OUTPUT            
+67             JEQ     WLOOP             
+6a             LDCH    BUFFER,X          
+6d             WD      OUTPUT            
+70             TIX     LENGTH            
+73             JLT     WLOOP             
+76             RSUB                      
+79    OUTPUT   BYTE    X'05'             
+7a             END                       
